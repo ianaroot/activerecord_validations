@@ -1,0 +1,17 @@
+
+<% if @errors %>
+<div class="errors container">
+  <% @event.errors.full_messages.each do |message| %>
+   <p><%= message  %></p>
+  <% end %>
+  </div>
+<% end %>
+<div class="container form">
+<form action="/events/create" method="post">
+  <p><input type="text" name="organizer_email" placeholder="organizer's email" value="<%= @organizer_email %>"></p>
+  <p><input type="text" name="organizer_name" placeholder="organizer's name" value="<%= @organizer_name %>"></p>
+  <p><input type="text" name="title" placeholder="event title" value="<%= @title %>"></p>
+  <p><input type="date" name="date" placeholder="date" value="<%= @date %>"></p>
+  <input type="submit" value="create event">
+</form>
+</div>
